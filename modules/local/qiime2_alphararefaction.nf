@@ -22,7 +22,7 @@ process QIIME2_ALPHARAREFACTION {
 
     #check values
     if [ \"\$maxdepth\" -gt \"75000\" ]; then maxdepth=\"75000\"; fi
-    if [ \"\$maxdepth\" -gt \"5000\" ]; then maxsteps=\"250\"; else maxsteps=\$((maxdepth/20)); fi
+    if [ \"\$maxdepth\" -gt \"5000\" ]; then maxsteps=\"250\"; else maxsteps=10; fi
     qiime diversity alpha-rarefaction  \
         --i-table ${table}  \
         --i-phylogeny ${tree}  \
